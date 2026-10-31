@@ -1,0 +1,384 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    color: white;
+    background: #100b2e;
+    overflow-x: hidden;
+}
+
+/* Animated background */
+
+.background {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    overflow: hidden;
+    background: linear-gradient(135deg, #100b2e, #26104b, #102b50);
+}
+
+.background span {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.55;
+    animation: float 10s infinite alternate ease-in-out;
+}
+
+.background span:nth-child(1) {
+    background: #a13cff;
+    top: 5%;
+    left: 5%;
+}
+
+.background span:nth-child(2) {
+    background: #007cff;
+    top: 40%;
+    right: 5%;
+    animation-delay: 2s;
+}
+
+.background span:nth-child(3) {
+    background: #ff38b8;
+    bottom: 0;
+    left: 35%;
+    animation-delay: 4s;
+}
+
+.background span:nth-child(4) {
+    background: #643cff;
+    top: 60%;
+    left: 0;
+    animation-delay: 3s;
+}
+
+@keyframes float {
+    from {
+        transform: translate(0, 0) scale(1);
+    }
+    to {
+        transform: translate(70px, -50px) scale(1.3);
+    }
+}
+
+/* Navigation */
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(15, 10, 40, 0.8);
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.navbar {
+    min-height: 75px;
+    padding: 15px 8%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-size: 30px;
+    color: white;
+}
+
+.logo span,
+.section h2 span {
+    color: #d58bff;
+}
+
+.navbar ul {
+    display: flex;
+    gap: 25px;
+    list-style: none;
+}
+
+.navbar ul a {
+    text-decoration: none;
+    color: white;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+.navbar ul a:hover {
+    color: #e19cff;
+}
+
+.menu-btn {
+    display: none;
+    color: white;
+    background: transparent;
+    border: none;
+    font-size: 26px;
+    cursor: pointer;
+}
+
+/* Home section */
+
+.home {
+    min-height: 90vh;
+    padding: 70px 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+}
+
+.welcome {
+    color: #d58bff;
+    letter-spacing: 3px;
+    font-size: 13px;
+    margin-bottom: 20px;
+}
+
+.home-content h1 {
+    font-size: 48px;
+    margin-bottom: 15px;
+}
+
+.home-content h1 span {
+    color: #d58bff;
+}
+
+.home-content h2 {
+    font-size: 23px;
+    margin-bottom: 20px;
+}
+
+.intro {
+    max-width: 550px;
+    line-height: 1.8;
+    color: #d6d1e9;
+    margin-bottom: 30px;
+}
+
+.btn {
+    display: inline-block;
+    background: linear-gradient(90deg, #9d4edd, #d14fbd);
+    border: none;
+    padding: 13px 28px;
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 5px 25px #a64dff;
+}
+
+/* Profile circle */
+
+.profile {
+    text-align: center;
+}
+
+.profile-circle {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    margin: auto auto 20px;
+    font-size: 100px;
+    font-weight: bold;
+    color: white;
+    background: linear-gradient(135deg, #9d4edd, #e45cae);
+    border: 6px solid rgba(255,255,255,0.25);
+    box-shadow: 0 0 50px rgba(180,80,255,0.5);
+}
+
+.profile p {
+    color: #d5b8ff;
+    margin-top: 8px;
+}
+
+/* Common sections */
+
+.section {
+    padding: 85px 10%;
+    text-align: center;
+}
+
+.section h2 {
+    font-size: 35px;
+    margin-bottom: 40px;
+}
+
+/* Glass cards */
+
+.glass-card {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.18);
+    backdrop-filter: blur(15px);
+    border-radius: 18px;
+    padding: 30px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+
+.glass-card:hover {
+    transform: translateY(-7px);
+    border-color: #c77dff;
+}
+
+.glass-card p {
+    line-height: 1.8;
+    color: #ddd6f3;
+}
+
+/* Education and projects */
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 22px;
+}
+
+.cards h3 {
+    color: #df9cff;
+    margin-bottom: 15px;
+}
+
+/* Skills */
+
+.skills {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.skill {
+    padding: 17px 35px;
+    background: rgba(157,78,221,0.25);
+    border: 1px solid #b36aff;
+    border-radius: 30px;
+    transition: 0.3s;
+}
+
+.skill:hover {
+    background: #9d4edd;
+    transform: scale(1.08);
+}
+
+/* Contact */
+
+form {
+    max-width: 550px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid rgba(255,255,255,0.2);
+    background: rgba(255,255,255,0.08);
+    color: white;
+    font-size: 15px;
+    outline: none;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: #c7bddb;
+}
+
+textarea {
+    height: 130px;
+    resize: vertical;
+}
+
+#message {
+    color: #9dffbd;
+}
+
+/* Footer */
+
+footer {
+    text-align: center;
+    padding: 25px;
+    background: rgba(0,0,0,0.3);
+    color: #d5c7e9;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+/* Mobile responsive */
+
+@media (max-width: 850px) {
+
+    .navbar {
+        padding: 15px 6%;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+    .navbar ul {
+        display: none;
+        position: absolute;
+        top: 75px;
+        left: 0;
+        width: 100%;
+        padding: 25px;
+        background: #17102f;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navbar ul.active {
+        display: flex;
+    }
+
+    .home {
+        flex-direction: column;
+        text-align: center;
+        padding: 70px 6%;
+    }
+
+    .home-content h1 {
+        font-size: 36px;
+    }
+
+    .profile-circle {
+        width: 190px;
+        height: 190px;
+        font-size: 75px;
+    }
+
+    .section {
+        padding: 65px 6%;
+    }
+}
+
+@media (max-width: 450px) {
+    .home-content h1 {
+        font-size: 30px;
+    }
+
+    .section h2 {
+        font-size: 28px;
+    }
+
+    .glass-card {
+        padding: 22px;
+    }
+}
